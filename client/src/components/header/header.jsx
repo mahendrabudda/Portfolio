@@ -13,11 +13,11 @@ const Header = () => {
   }, []);
 
   const handleHireMeClick = () => {
-    window.location.href = "http://localhost:5173/#home";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <header style={styles.container}>
+    <header id="home" style={styles.container} >
       {/* Animated background particles */}
       <div style={styles.particles}>
         {[...Array(20)].map((_, i) => (
@@ -47,7 +47,7 @@ const Header = () => {
         }}>
           FULL STACK DEVELOPER & TECH ENTHUSIAST
         </p>
-        
+
         <h1 style={{
           ...styles.mainTitle,
           opacity: isVisible ? 1 : 0,
@@ -56,30 +56,36 @@ const Header = () => {
         }}>
           Mahendra Budda
         </h1>
-        
+
         <div style={styles.titleUnderline} />
-        
+
         <p style={{
           ...styles.description,
           opacity: isVisible ? 1 : 0,
           transition: 'opacity 0.8s ease-out 0.6s',
         }}>
-          I'm a passionate developer specializing in web and mobile applications. 
-          With expertise in modern technologies and a commitment to excellence, 
+          I'm a passionate developer specializing in web and mobile applications.
+          With expertise in modern technologies and a commitment to excellence,
           I transform ideas into powerful digital solutions that make a real impact.
         </p>
-        
-        
+
+
         {/* Scroll indicator */}
         <div style={{
           ...styles.scrollIndicator,
           opacity: isVisible ? 1 : 0,
           transition: 'opacity 1s ease-out 1.2s',
+          bottom: '-100px',
         }}>
           <div style={styles.scrollMouse}>
             <div style={styles.scrollWheel} />
           </div>
-          <p style={styles.scrollText}>Scroll to explore</p>
+          <p style={{
+            ...styles.scrollText,
+            marginTop: '14px',     // ← adds ~1cm gap below the mouse icon
+          }}>
+            Scroll to explore
+          </p>
         </div>
       </div>
     </header>
@@ -88,24 +94,24 @@ const Header = () => {
 
 const styles = {
   container: {
-  backgroundColor: '#050a1e',
-  height: '100vh',          // full screen height
-  width: '100%',            // full width
+    backgroundColor: '#050a1e',
+    height: '100vh',          // full screen height
+    width: '100%',            // full width
 
-  display: 'flex',
-  flexDirection: 'column',  // better for hero content
-  justifyContent: 'center',
-  alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',  // better for hero content
+    justifyContent: 'center',
+    alignItems: 'center',
 
-  color: '#ffffff',
-  textAlign: 'center',
-  fontFamily: "'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    color: '#ffffff',
+    textAlign: 'center',
+    fontFamily: "'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
 
-  padding: '0 20px',
-  position: 'relative',
-  overflow: 'hidden',
-}
-,
+    padding: '0 20px',
+    position: 'relative',
+    overflow: 'hidden',
+  }
+  ,
   particles: {
     position: 'absolute',
     width: '100%',
