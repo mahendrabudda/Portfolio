@@ -69,28 +69,7 @@ const Header = () => {
           I transform ideas into powerful digital solutions that make a real impact.
         </p>
         
-        <button 
-          onClick={handleHireMeClick} 
-          style={{
-            ...styles.button,
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'scale(1)' : 'scale(0.8)',
-            transition: 'opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s, background-color 0.3s ease',
-          }}
-          onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#1d4ed8';
-            e.target.style.transform = 'scale(1.05)';
-            e.target.style.boxShadow = '0 8px 25px rgba(37, 99, 235, 0.4)';
-          }}
-          onMouseOut={(e) => {
-            e.target.style.backgroundColor = '#2563eb';
-            e.target.style.transform = 'scale(1)';
-            e.target.style.boxShadow = '0 4px 15px rgba(37, 99, 235, 0.3)';
-          }}
-        >
-          Hire me
-        </button>
-
+        
         {/* Scroll indicator */}
         <div style={{
           ...styles.scrollIndicator,
